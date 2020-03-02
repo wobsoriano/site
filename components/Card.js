@@ -1,19 +1,4 @@
 import React from 'react';
-// import axios from 'axios';
-// import GET_REPOSITORIES from '../queries/GET_REPOSITORIES';
-
-// axios({
-// 	url: 'https://api.github.com/graphql',
-// 	method: 'post',
-// 	headers: {
-// 		Authorization: 'Bearer,
-// 	},
-// 	data: {
-// 		query: GET_REPOSITORIES,
-// 	},
-// }).then(result => {
-// 	console.log(result.data);
-// });
 
 const Card = ({ data }) => {
 	const { title, description, techonologies, githubUrl, url } = data;
