@@ -1,33 +1,20 @@
-import { useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
+import useSWR from 'swr';
+
+const fetcher = async (path) => {
+    const response = await axios(path);
+    return response.data;
+}
 
 const about = () => {
-    
-    // useEffect(() => {
-    //     const getProjects = async () => {
-    //         try {
-    //             const response = await axios({
-    //                 url: 'https://api.github.com/graphql',
-    //                 method: 'post',
-    //                 headers: {
-    //                     Authorization: `Bearer ${process.env.NEXT_SERVER_GITHUB_PERSONAL_ACCESS_TOKEN}`,
-    //                 },
-    //                 data: {
-    //                     query: GET_REPOSITORIES,
-    //                 },
-    //             });
-    //             console.log(response.data);
-    //         } catch (e) {
-    //             console.log(e);
-    //         }
-    //     }
+    const { data, error } = useSWR('/api/repositories', fetcher);
 
-    //     getProjects();
-    // }, []);
+    if (error) return <div>failed to load</div>;
+    if (!data) return <div>loading...</div>;
 
     return (
         <div>
-            Projects page
+            Projects page {data[0].name}
         </div>
     )
 }

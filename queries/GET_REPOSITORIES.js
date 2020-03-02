@@ -3,11 +3,17 @@ const GET_REPOSITORIES = ` query {
       repositories(first: 20, isFork: false) {
         nodes {
           name
+          description
           url
+          homepageUrl
           forkCount
           stargazers {
             totalCount
           }
+          primaryLanguage {
+            name
+          }
+          createdAt
         }
       }
     }

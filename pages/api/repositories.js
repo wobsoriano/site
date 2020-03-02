@@ -13,6 +13,12 @@ export default async (_, res) => {
             query: GET_REPOSITORIES,
         },
     });
+
+    if (response.data.errors) {
+      console.log(response.data.errors);
+      return res.status(500).send('Server error');
+    }
+
     const repos = response.data.data.user.repositories.nodes;
     return res.json(repos);
   } catch (e) {

@@ -7,7 +7,7 @@ const Footer = () => {
 				background: '#020b1a',
 			}}
 		>
-			<div className="container max-w-5xl mx-auto py-8">
+			<div className="container md:max-w-5xl lg:max-w-6xl mx-auto py-8">
 				<div className="flex justify-around">
 					<a href="#/" className="text-app-lightSlate hover:text-app-green">
 						<ion-icon name="logo-github" style={{ fontSize: 24 }}></ion-icon>
