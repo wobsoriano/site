@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Card from '../components/Card';
+import ShowcaseCard from '../components/ShowcaseCard';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 
@@ -50,7 +50,7 @@ const Home = () => {
     </Head>
 
       <div className="w-full px-4 md:px-6 text-xl leading-normal">
-				<h1 className="text-app-lightestSlate font-bold font-sans break-normal pt-6 pb-2 text-3xl md:text-4xl">
+				<h1 className="text-app-lightestSlate font-bold font-sans break-normal mb-2 mt-4 text-3xl md:text-4xl">
 					<TypewriteNameIntroNoSSR />
 				</h1>
 
@@ -85,14 +85,16 @@ const Home = () => {
 							className="w-full flex items-stretch lg:w-1/2 px-2 mb-4"
 							key={idx}
 						>
-							<Card data={data} />
+							<ShowcaseCard data={data} />
 						</div>
 					))}
 				</div>
         <Link href="/projects">
-          <a className="text-app-green">
-            Go to projects page
-          </a>
+		<div className="text-center mt-4">
+                    <button class="bg-transparent text-app-lightestSlate text-app-green font-semibold py-2 px-4 border border-app-green rounded">
+                        Go to Projects
+                    </button>
+                </div>
         </Link>
 			</div>
   </div>)

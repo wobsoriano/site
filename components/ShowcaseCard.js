@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ data }) => {
+const ShowcaseCard = ({ data }) => {
 	const { title, description, techonologies, githubUrl, url } = data;
 
 	return (
@@ -53,4 +53,4 @@ const Card = ({ data }) => {
 	);
 };
 
-export default Card;
+export default ShowcaseCard;

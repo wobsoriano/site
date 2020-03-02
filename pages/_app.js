@@ -6,14 +6,13 @@ import '../css/tailwind.css';
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <div className="flex flex-col" style={{ minHeight: '100vh' }}>
             <Nav />
-
-			<div className="container w-full md:max-w-4xl mx-auto pt-2  mb-8">
-            {children}
-            </div>
+                <div className="container w-full md:max-w-4xl mx-auto pt-2  mb-8" style={{ flex: '1 0 auto' }}>
+                {children}
+                </div>
             <Footer />
-        </>
+        </div>
     );
 }
 

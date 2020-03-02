@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const GET_REPOSITORIES = ` query {
   user(login: "sorxrob") {
-    repositories(first: 20, isFork: false) {
+    repositories(first: 16, isFork: false) {
       nodes {
         name
         description
@@ -15,7 +15,7 @@ const GET_REPOSITORIES = ` query {
         primaryLanguage {
           name
         }
-        createdAt
+        diskUsage
       }
     }
   }
