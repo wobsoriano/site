@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
         <>
             <Nav />
 
-			<div className="container w-full md:max-w-4xl lg:max-w-5xl mx-auto pt-2  mb-8">
+			<div className="container w-full md:max-w-4xl mx-auto pt-2  mb-8">
             {children}
             </div>
             <Footer />

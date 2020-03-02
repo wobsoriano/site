@@ -7,7 +7,7 @@ const Nav = () => {
 
 	return (
 		<nav id="header" className="w-full z-10 top-0">
-			<div className="w-full md:max-w-4xl lg:max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
+			<div className="w-full md:max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 				<div className="pl-4">
 				<Link href="/">
 					<a

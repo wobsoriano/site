@@ -14,7 +14,7 @@ const featuredProjects = [
 			'A web app that shows near-real-time data and timeline of the coronavirus (COVID-19).',
 		url: 'https://the2019ncov.com',
 		githubUrl: 'https://github.com/sorxrob/2019-ncov-frontend',
-		techonologies: ['Node', 'Express', 'Vue', 'ApexCharts'],
+		techonologies: ['Node', 'Vue', 'ApexCharts'],
 	},
 	{
 		title: 'CoderStats',

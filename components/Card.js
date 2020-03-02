@@ -5,7 +5,7 @@ const Card = ({ data }) => {
 
 	return (
 		<div
-			className="bg-app-lightNavy rounded overflow-hidden shadow relative"
+			className="bg-app-lightNavy rounded overflow-hidden shadow relative w-full"
 			style={{ paddingBottom: 60 }}
 		>
 			<div className="px-6 pt-4">
