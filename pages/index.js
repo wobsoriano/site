@@ -55,6 +55,7 @@ const Home = () => {
           property="og:title"
           content="Robert Soriano | Software Developer"
         />
+        <meta property="og:url" content="https://robsoriano.com" />
         <meta
           property="og:site_name"
           content="Robert Soriano | Software Developer"
