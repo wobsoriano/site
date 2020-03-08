@@ -5,7 +5,7 @@
  My personal website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://zeit.co/" target="_blank">zeit.co</a>
 </p>
 
-![demo](https://i.imgur.com/ev87prC.png)
+![demo](https://i.imgur.com/k473GQG.jpg)
 
 ## Installing
 
