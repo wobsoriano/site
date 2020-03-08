@@ -25,6 +25,7 @@ const GET_REPOSITORIES = ` query {
 module.exports = {
   async getRepositories() {
     try {
+      console.log(process.env.NEXT_SERVER_GITHUB_PERSONAL_ACCESS_TOKEN);
       const response = await axios({
         url: 'https://api.github.com/graphql',
         method: 'post',
