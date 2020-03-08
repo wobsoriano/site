@@ -10,7 +10,7 @@ const Nav = () => {
       <div className="w-full md:max-w-5xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
         <div className="pl-4">
           <Link href="/">
-            <a className="text-app-green text-base no-underline hover:no-underline font-extrabold text-xl">
+            <a className="cursor-pointer text-app-green text-base no-underline hover:no-underline font-extrabold text-xl">
               RS
             </a>
           </Link>
@@ -19,9 +19,8 @@ const Nav = () => {
 
         <div className="block lg:hidden pr-4">
           <a
-            href="#/"
             onClick={() => setIsOpen(!isOpen)}
-            className="appearance-none text-app-green"
+            className="cursor-pointer appearance-none text-app-green"
           >
             {isOpen ? (
               <ion-icon name="close-outline" size="large"></ion-icon>

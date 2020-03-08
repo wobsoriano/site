@@ -12,7 +12,7 @@ const NavItem = ({ name, href }) => {
             router.pathname === href
               ? 'text-app-green'
               : 'text-app-slate hover:text-app-green'
-          } inline-block py-2 px-4 no-underline`}
+          } inline-block py-2 px-4 no-underline hover:bg-transparent focus:outline-none active:bg-transparent`}
         >
           {name}
         </a>

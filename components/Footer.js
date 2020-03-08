@@ -8,7 +8,7 @@ const Footer = () => {
     },
     {
       icon: 'logo-linkedin',
-      href: '',
+      href: 'https://www.linkedin.com/in/robertcsoriano',
     },
     {
       icon: 'logo-facebook',
@@ -28,6 +28,8 @@ const Footer = () => {
     <a
       key={idx}
       href={item.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-app-lightSlate hover:text-app-green mr-3"
     >
       <ion-icon name={item.icon} size="large"></ion-icon>
