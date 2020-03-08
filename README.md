@@ -1,6 +1,11 @@
-# robsoriano.com
+<h1 align="center">
+    robsoriano.com
+</h1>
+<p align="center">
+ My personal website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://zeit.co/" target="_blank">zeit.co</a>
+</p>
 
-My personal website.
+![demo](https://i.imgur.com/ev87prC.png)
 
 ## Installing
 
@@ -36,4 +41,4 @@ Everything in this site is open source so feel free to fork this repo. If you do
 ## Acknowledgments
 
 - Hat tip to anyone whos module was used
-- [Brittany Chiang](https://github.com/bchiang7/) for the color reference.
+- [Brittany Chiang](https://github.com/bchiang7/) for the color reference and card design.
