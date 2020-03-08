@@ -1,7 +1,5 @@
 {
-  "build": {
-    "env": {
-      "NEXT_SERVER_GITHUB_PERSONAL_ACCESS_TOKEN": "@github-personal-access-token"
-    }
+  "env": {
+    "NEXT_SERVER_GITHUB_PERSONAL_ACCESS_TOKEN": "@github-personal-access-token"
   }
 }
