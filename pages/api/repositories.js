@@ -7,4 +7,4 @@ export default async (_, res) => {
   } catch (e) {
     return res.status(500).send(e);
   }
-}
+};

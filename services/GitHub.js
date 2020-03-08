@@ -35,14 +35,14 @@ module.exports = {
           query: GET_REPOSITORIES,
         },
       });
-      
+
       if (response.data.errors) {
         throw new Error('Server error');
       }
-      
+
       return response.data.data.user.repositories.nodes;
     } catch (e) {
       throw new Error('Server error');
     }
-  }
-}
+  },
+};

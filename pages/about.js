@@ -1,9 +1,5 @@
 const about = () => {
-    return (
-        <>
-            About page
-        </>
-    )
-}
+  return <div className="text-app-slate">Under Construction</div>;
+};
 
-export default about
+export default about;
