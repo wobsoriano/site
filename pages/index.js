@@ -33,12 +33,12 @@ const featuredProjects = [
 		techonologies: ['React', 'Spotify API', 'Chart.js'],
 	},
 	{
-		title: 'Earthquake Visualization',
+		title: 'CryptoStats',
 		description:
-			'A near-real-time map of latest earthquakes recorded by the USGS Earthquake Hazards Program.',
-		url: '',
-		githubUrl: 'https://github.com/sorxrob/earthquake-visualization',
-		techonologies: ['Vue', 'Nuxt', 'USGS Earthquake API'],
+			'A web app for visualizing top crypto assets by market capitalization.',
+		url: 'https://cryptostats.now.sh/',
+		githubUrl: 'https://github.com/sorxrob/cryptostats',
+		techonologies: ['React', 'CoinGecko API', 'Chart.js'],
 	},
 ];
 
@@ -60,13 +60,8 @@ const Home = () => {
 				</p>
 
 				<p className="py-6 text-app-slate">
-					My current toolset includes Vue, React, Redux, Node, Flutter, Docker and other various frameworks, libraries and technologies related to them.
+					My current toolset includes Vue, React, Redux, Node and other various frameworks, libraries and technologies related to them.
 				</p>
-
-        {/* <p className="py-6 text-app-slate">
-					Right now I'm using Javascript, Node.js, Vue.js and React.js to design
-					and hack noice websites together on the internet. Occasionally, I make mobile apps using Flutter.
-				</p> */}
 
 				<p className="py-6 text-app-slate">
 					Have a project you'd like to discuss? <br />
@@ -89,13 +84,14 @@ const Home = () => {
 						</div>
 					))}
 				</div>
-        <Link href="/projects">
 		<div className="text-center mt-4">
-                    <button class="bg-transparent text-app-lightestSlate text-app-green font-semibold py-2 px-4 border border-app-green rounded">
+
+        <Link href="/projects">
+                    <button class="w-full sm:w-full md:w-auto bg-transparent text-app-lightestSlate text-app-green font-semibold py-2 px-4 border border-app-green rounded">
                         Go to Projects
                     </button>
-                </div>
         </Link>
+                </div>
 			</div>
   </div>)
 };

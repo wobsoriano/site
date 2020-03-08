@@ -17,7 +17,7 @@ const about = () => {
     const sortByStars = data.sort((a, b) => parseFloat(b.stargazers.totalCount) - parseFloat(a.stargazers.totalCount));
     const isWindowContext = typeof window !== 'undefined';
 
-    const moreButton = <button onClick={() => location.href='http://github.com/sorxrob'} className="bg-transparent text-app-lightestSlate text-app-green font-semibold py-2 px-4 border border-app-green rounded">
+    const moreButton = <button onClick={() => location.href='http://github.com/sorxrob'} className="w-full sm:w-full md:w-auto bg-transparent text-app-lightestSlate text-app-green font-semibold py-2 px-4 border border-app-green rounded">
         More on GitHub
     </button>;
 
