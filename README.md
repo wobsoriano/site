@@ -1,30 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# robsoriano.com
 
-## Getting Started
+My personal website.
 
-First, run the development server:
+## Installing
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. Install dependencies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Fire up the server and watch files
 
-## Learn More
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Built with
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [GitHub GraphQL API](https://developer.github.com/v4/)
+- [Tailwind](https://tailwindcss.com/)
 
 ## Deploy on ZEIT Now
 
 The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Forking this repo
+
+Everything in this site is open source so feel free to fork this repo. If you do, please just give me proper credit by linking back to my website, https://robsoriano.com.
+
+## Acknowledgments
+
+- Hat tip to anyone whos module was used
+- [Brittany Chiang](https://github.com/bchiang7/) for the color reference.
