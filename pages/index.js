@@ -51,6 +51,11 @@ const Home = () => {
       <Head>
         <title>Robert Soriano | Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Robert Soriano | Software Developer"
+        />
+        <meta property="og:image" content="https://i.imgur.com/ev87prC.png" />
       </Head>
 
       <div className="w-full px-4 md:px-6 text-xl leading-normal">
