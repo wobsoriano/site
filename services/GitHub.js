@@ -37,12 +37,12 @@ module.exports = {
       });
 
       if (response.data.errors) {
-        throw new Error('Server error');
+        throw new Error(response.data.errors);
       }
 
       return response.data.data.user.repositories.nodes;
     } catch (e) {
-      throw new Error('Server error');
+      throw new Error(e);
     }
   },
 };
