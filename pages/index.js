@@ -59,7 +59,7 @@ const Home = () => {
           property="og:site_name"
           content="Robert Soriano | Software Developer"
         />
-        <meta property="og:image" content="https://i.imgur.com/k473GQG.png" />
+        <meta property="og:image" content="https://i.imgur.com/2pxoSOM.png" />
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
