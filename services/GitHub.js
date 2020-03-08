@@ -37,11 +37,13 @@ module.exports = {
       });
 
       if (response.data.errors) {
+        console.log(response.data.errors);
         throw new Error(response.data.errors);
       }
 
       return response.data.data.user.repositories.nodes;
     } catch (e) {
+      console.log(e);
       throw new Error(e);
     }
   },
