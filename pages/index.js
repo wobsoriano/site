@@ -55,7 +55,16 @@ const Home = () => {
           property="og:title"
           content="Robert Soriano | Software Developer"
         />
+        <meta
+          property="og:site_name"
+          content="Robert Soriano | Software Developer"
+        />
         <meta property="og:image" content="https://i.imgur.com/ev87prC.png" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="Robert Soriano is a software developer based in Manila, PH specializing in building websites and applications."
+        />
       </Head>
 
       <div className="w-full px-4 md:px-6 text-xl leading-normal">
