@@ -36,7 +36,7 @@ const featuredProjects = [
     techonologies: ['React', 'Spotify API', 'Chart.js'],
   },
   {
-    title: 'CryptoStats',
+    title: 'Poké95',
     description: 'A Windows 95 style Pokédex.',
     url: 'https://poke95.now.sh',
     githubUrl: 'https://github.com/sorxrob/poke95',
