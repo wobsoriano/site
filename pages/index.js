@@ -37,11 +37,10 @@ const featuredProjects = [
   },
   {
     title: 'CryptoStats',
-    description:
-      'A web app for visualizing top crypto assets by market capitalization.',
-    url: 'https://cryptostats.now.sh/',
-    githubUrl: 'https://github.com/sorxrob/cryptostats',
-    techonologies: ['React', 'CoinGecko API', 'Chart.js'],
+    description: 'A Windows 95 style Pokédex.',
+    url: 'https://poke95.now.sh',
+    githubUrl: 'https://github.com/sorxrob/poke95',
+    techonologies: ['React', 'PokéAPI'],
   },
 ];
 
