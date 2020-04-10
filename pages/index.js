@@ -14,30 +14,30 @@ const featuredProjects = [
   {
     title: 'the2019ncov.com',
     description:
-      'A web app that shows near-real-time data and timeline of the coronavirus (COVID-19).',
+      '🌏 A web app that shows near-real-time data and timeline of the coronavirus (COVID-19).',
     url: 'https://the2019ncov.com',
     githubUrl: 'https://github.com/sorxrob/2019-ncov-frontend',
     techonologies: ['Node', 'Vue', 'ApexCharts'],
   },
   {
+    title: 'COVID-3D',
+    description:
+      "🌏 An interactive 3D visualization of COVID-19.",
+    url: 'https://covid3d.live',
+    githubUrl: 'https://github.com/sorxrob/covid-3d',
+    techonologies: ['JavaScript', 'D3', 'globe.gl'],
+  },
+  {
     title: 'CoderStats',
     description:
-      'An awesome look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories and top repos.',
+      '📊 An awesome look at your GitHub profile and repo stats. Includes data visualizations of your top languages, starred repositories and top repos.',
     url: 'https://coderstats.netlify.com',
     githubUrl: 'https://github.com/sorxrob/coderstats',
     techonologies: ['Svelte', 'Github API', 'Chart.js'],
   },
   {
-    title: 'SpotifyStats',
-    description:
-      "A web app for visualizing your Spotify's top artists, top tracks, recently played tracks, and details information about each track. Includes playlist creator and charts.",
-    url: 'http://spotify-stats.now.sh',
-    githubUrl: 'https://github.com/sorxrob/spotify-stats',
-    techonologies: ['React', 'Spotify API', 'Chart.js'],
-  },
-  {
     title: 'Poké95',
-    description: 'A Windows 95 style Pokédex.',
+    description: '🚀 A Windows 95 style Pokédex.',
     url: 'https://poke95.now.sh',
     githubUrl: 'https://github.com/sorxrob/poke95',
     techonologies: ['React', 'PokéAPI'],
