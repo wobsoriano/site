@@ -31,7 +31,7 @@ const Home: React.FC = () => {
         />
       </Head>
       <Box h="100vh">
-        <Flex margin="0 auto" direction="column" maxW={992} px={[0, 8, 8]} py={5}>
+        <Flex margin="0 auto" direction="column" maxW={992} px={[5, 8, 8]} py={5}>
           <Heading as="h1" fontSize={40} color="slate.lighter">
             {`Hi, I'm Robert Soriano.`}
           </Heading>
