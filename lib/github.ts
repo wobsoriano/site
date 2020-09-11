@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Project } from '../interfaces';
 
 const GET_REPOSITORIES = ` query {
   user(login: "sorxrob") {
@@ -22,7 +23,7 @@ const GET_REPOSITORIES = ` query {
 }
 `;
 
-export async function getRepositories() {
+export async function getRepositories(): Promise<Project[]> {
   try {
     const response = await axios({
       url: 'https://api.github.com/graphql',
