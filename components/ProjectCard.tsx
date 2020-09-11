@@ -20,9 +20,6 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
       <Flex justifyContent="space-between">
         <Icon color="green.custom" as={MdFolderOpen} boxSize={8} />
         <Box>
-          {/* <Link href={project.url} isExternal>
-            <Icon as={IoLogoGithub} boxSize={8} />
-          </Link> */}
           <IconButton
             variant="link"
             _hover={{
