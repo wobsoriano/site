@@ -6,6 +6,7 @@ import axios from 'axios';
 import useSWR from 'swr';
 
 import { Project } from '../interfaces';
+import ProjectSkeleton from '../components/ProjectSkeleton';
 
 const fetcher = async (url: string) => {
   const { data } = await axios.get<Project[]>(url);
@@ -57,15 +58,14 @@ const Home: React.FC = () => {
           <Heading as="h2" size="lg" color="slate.lighter" mt={5}>
             {`Some Things I've Built`}
           </Heading>
+
           {error ? (
             <Text mt={5}>An error occurred. Please refresh.</Text>
-          ) : !data ? (
-            <Text mt={5}>Loading projects...</Text>
           ) : (
             <SimpleGrid columns={[1, null, 2]} spacing={5} mt={5}>
-              {data.map((item, idx) => (
-                <ProjectCard project={item} key={idx} />
-              ))}
+              {data
+                ? data.map((item, idx) => <ProjectCard project={item} key={idx} />)
+                : [...Array(6).keys()].map((item) => <ProjectSkeleton key={item} />)}
             </SimpleGrid>
           )}
 
