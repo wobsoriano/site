@@ -1,30 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+    robsoriano.com
+</h1>
+<p align="center">
+ My personal website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted in <a href="https://zeit.co/" target="_blank">zeit.co</a>
+</p>
 
-## Getting Started
+## Installing
 
-First, run the development server:
+1. Install dependencies
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Fire up the server and watch files
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+## Built with
 
-To learn more about Next.js, take a look at the following resources:
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [GitHub GraphQL API](https://developer.github.com/v4/)
+- [Chakra UI](https://next.chakra-ui.com/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Acknowledgments
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Hat tip to anyone whos module was used
+- [Brittany Chiang](https://github.com/bchiang7/) for the color reference and card design.
