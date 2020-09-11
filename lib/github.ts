@@ -28,7 +28,7 @@ export async function getRepositories() {
       url: 'https://api.github.com/graphql',
       method: 'post',
       headers: {
-        Authorization: `Bearer ${process.env.NEXT_SERVER_GITHUB_PERSONAL_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${process.env.portfolio_github_access_token}`,
       },
       data: {
         query: GET_REPOSITORIES,
