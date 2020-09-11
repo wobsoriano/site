@@ -1,11 +1,8 @@
-import { theme as chakraTheme } from '@chakra-ui/core';
+import { extendTheme } from '@chakra-ui/core';
 
-const theme = {
-  ...chakraTheme,
+const theme = extendTheme({
   styles: {
-    ...chakraTheme.styles,
     global: {
-      ...chakraTheme.styles.global,
       'html, body': {
         backgroundColor: 'navy.base',
         color: 'slate.base',
@@ -13,7 +10,6 @@ const theme = {
     },
   },
   colors: {
-    ...chakraTheme.colors,
     navy: {
       base: '#0a192f',
       light: '#172a45',
@@ -26,10 +22,9 @@ const theme = {
     },
     white: '#e6f1ff',
     green: {
-      ...chakraTheme.colors.green,
       custom: '#64ffda',
     },
   },
-};
+});
 
 export default theme;
