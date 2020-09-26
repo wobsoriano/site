@@ -78,7 +78,7 @@ const Home: React.FC = () => {
               borderColor="green.custom"
               color="green.custom"
               variant="outline"
-              onClick={() => window.open('https://github.com/sorxrob', '_blank')}
+              onClick={() => window.open('https://github.com/wobsoriano', '_blank')}
             >
               More on GitHub
             </Button>

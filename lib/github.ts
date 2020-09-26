@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Project } from '../interfaces';
 
 const GET_REPOSITORIES = ` query {
-  user(login: "sorxrob") {
+  user(login: "wobsoriano") {
     repositories(first: 6, isFork: false, orderBy: { field: STARGAZERS, direction: DESC }) {
       nodes {
         name
