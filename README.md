@@ -2,7 +2,7 @@
     robsoriano.com
 </h1>
 <p align="center">
- My personal website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted in <a href="https://zeit.co/" target="_blank">zeit.co</a>
+ My personal website built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted in <a href="https://vercel.com/" target="_blank">vercel.com/</a>
 </p>
 
 ## Installing
