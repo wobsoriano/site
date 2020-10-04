@@ -28,5 +28,5 @@
 
 ## Acknowledgments
 
-- Hat tip to anyone whos module was used
+- Hat tip to anyone whose module was used
 - [Brittany Chiang](https://github.com/bchiang7/) for the color reference and card design.
