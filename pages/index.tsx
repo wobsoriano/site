@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { Box, SimpleGrid, Flex, Heading, Text, Link, Button, Center } from '@chakra-ui/core';
+import { Box, SimpleGrid, Flex, Heading, Text, Link, Button, Center } from '@chakra-ui/react';
 import ProjectCard from '../components/ProjectCard';
 import axios from 'axios';
 import useSWR from 'swr';

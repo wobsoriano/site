@@ -1,4 +1,4 @@
-import { Stack, Skeleton } from '@chakra-ui/core';
+import { Stack, Skeleton } from '@chakra-ui/react';
 import React from 'react';
 
 const ProjectSkeleton: React.FC = () => {

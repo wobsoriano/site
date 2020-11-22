@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 
-import { Box, Text, Flex, Icon, IconButton } from '@chakra-ui/core';
+import { Box, Text, Flex, Icon, IconButton } from '@chakra-ui/react';
 import { IoLogoGithub, IoMdOpen } from 'react-icons/io';
 import { AiOutlineStar, AiOutlineFork } from 'react-icons/ai';
 import { MdFolderOpen } from 'react-icons/md';
