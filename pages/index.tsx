@@ -41,7 +41,7 @@ const Home: React.FC = () => {
           applications.`}
           </Text>
           <Text fontSize="lg" fontWeight="medium" mt={5}>
-            {`My current toolset includes Vue, React, Redux, Node and other various
+            {`My current toolset includes Vue, React, Node and other various
           frameworks, libraries and technologies related to them.`}
           </Text>
           <Text fontSize="lg" fontWeight="medium" mt={5}>
