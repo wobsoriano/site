@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
-          content="Robert Soriano is a software developer based in Manila, PH specializing in building websites and applications."
+          content="Robert Soriano is a software developer based in CA specializing in building websites and applications."
         />
       </Head>
       <Box h="100vh">
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
             {`Hi, I'm Robert Soriano.`}
           </Heading>
           <Text fontSize="lg" fontWeight="medium" mt={5}>
-            {`I'm a software developer based in Manila, PH specializing in building websites and
+            {`I'm a software developer based in CA specializing in building websites and
           applications.`}
           </Text>
           <Text fontSize="lg" fontWeight="medium" mt={5}>
