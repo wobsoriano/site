@@ -6,4 +6,11 @@ node_modules
 .output
 .env
 dist
-.vercel
+.DS_Store
+
+# Yarn
+.yarn/cache
+.yarn/*state*
+
+# Local History
+.history
