@@ -8,7 +8,7 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-    "content-wind": "latest",
-    "nuxt": "latest"
+    "content-wind": "^1.0.1",
+    "nuxt": "^3.8.0"
   }
 }
