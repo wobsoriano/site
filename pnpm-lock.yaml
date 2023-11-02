@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   content-wind:
-    specifier: ^1.0.1
-    version: 1.0.1(tailwindcss@3.3.3)(vue@3.3.6)(webpack@5.89.0)
+    specifier: ^1.1.0
+    version: 1.1.0(tailwindcss@3.3.3)(vue@3.3.6)(webpack@5.89.0)
   nuxt:
     specifier: ^3.8.0
     version: 3.8.0(vite@4.5.0)
@@ -1516,6 +1516,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.5
+      napi-wasm: 1.1.0
     dev: true
     bundledDependencies:
       - napi-wasm
@@ -2960,8 +2961,8 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /content-wind@1.0.1(tailwindcss@3.3.3)(vue@3.3.6)(webpack@5.89.0):
-    resolution: {integrity: sha512-S+7RO0tSgYSleHH120SXsMXnbz72mil4V/bmaNBhan3HZdGSJmCyXz/+56TasVMLLKxHjb9h+bPLJ82+q5BQWw==}
+  /content-wind@1.1.0(tailwindcss@3.3.3)(vue@3.3.6)(webpack@5.89.0):
+    resolution: {integrity: sha512-08xv45r9ADYmXxpHzjwNC4K2wfuStagMG/7Y9at/LYlul0+dbRKUZsrIg2+6OekGgo4nEeER6+Ttwe4uQ3yy4g==}
     dependencies:
       '@nuxt/content': 2.8.5(vue@3.3.6)
       '@nuxthq/studio': 1.0.2
@@ -5906,6 +5907,10 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
+    dev: true
+
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
     dev: true
 
   /negotiator@0.6.3:
