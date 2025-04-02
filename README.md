@@ -1,6 +1,6 @@
 # site
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wobsoriano/robsoriano.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wobsoriano/site)
 
 ## Stack
 
@@ -11,8 +11,8 @@
 ## Running Locally
 
 ```bash
-git clone https://github.com/wobsoriano/robsoriano.com
-cd robsoriano.com
+git clone https://github.com/wobsoriano/site
+cd site
 bun install
 bun dev
 ```
