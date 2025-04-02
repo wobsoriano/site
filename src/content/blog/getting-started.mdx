@@ -1,0 +1,144 @@
+---
+title: "Integrating tRPC with SvelteKit"
+publishedAt: "2025-04-02"
+summary: "Instructions to build and configure your Astrofolio portfolio."
+tags: "Configuration, Web development"
+---
+
+With the release of [tRPC 11](https://trpc.io/blog/announcing-trpc-v11) and its resolver function now based on the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), integrating type-safe APIs into SvelteKit applications has never been easier. This post will walk you through the step-by-step process of setting up tRPC with SvelteKit.
+
+This post assumes you have familiarity of [tRPC](https://trpc.io/docs/getting-started) and [SvelteKit](https://svelte.dev/docs/svelte/getting-started), and have ideally built an application using both of these technologies.
+
+## Installation
+
+Start off by creating a SvelteKit project using the Svelte CLI:
+
+```bash
+npx sv create my-app
+```
+
+You'll be prompted with a few configuration questions:
+
+- For the template, choose 'SvelteKit minimal'
+- For type checking with TypeScript, select 'Yes'
+- Configure additional options as needed for your project
+
+Next, navigate to your newly created app and install the necessary dependencies for tRPC.
+
+```bash
+cd my-app
+npm install @trpc/server @trpc/client zod
+```
+
+## Defining a Backend Router
+
+With the project set up and dependencies installed, let's build a typesafe API with tRPC.
+
+First, create a file at `src/lib/server/trpc/init.ts` and initialize your tRPC backend:
+
+```ts
+import { initTRPC } from '@trpc/server';
+ 
+const t = initTRPC.create();
+
+/**
+ * Export reusable router and procedure helpers
+ * that can be used throughout the router
+ */
+export const router = t.router;
+export const publicProcedure = t.procedure;
+```
+
+Next, create a file at `src/lib/server/trpc/router.ts` and initialize a basic router:
+
+```ts
+import { z } from 'zod';
+import { router, publicProcedure } from './init.js';
+
+export const appRouter = router({
+  hello: publicProcedure
+    .input(z.object({ text: z.string() }))
+    .query(({ input }) => {
+      return { greeting: `hello ${input.text}` };
+    }),
+});
+
+export type AppRouter = typeof appRouter;
+```
+
+## Creating the Server Endpoint
+
+Now that we've defined a router, we need to expose it through a SvelteKit endpoint. We'll use the [Fetch adapter](https://trpc.io/docs/server/adapters/fetch) since SvelteKit is built on top of [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API).
+
+Create a catch-all route file at `src/routes/api/trpc/[...procedure]/+server.ts`:
+
+```ts
+import type { RequestHandler } from './$types';
+import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
+import { appRouter } from '$lib/server/trpc/router';
+
+export const GET: RequestHandler = (event) => {
+	return fetchRequestHandler({
+		endpoint: '/api/trpc',
+		req: event.request,
+		router: appRouter,
+		createContext() {
+			// pass anything here that you want to access in your resolvers
+			const user = event.locals.user;
+			return {
+				user
+			};
+		}
+	});
+};
+
+export const POST = GET;
+```
+
+## Setting Up the Client
+
+Now let's harness the power of end-to-end type safety. Create a file at `src/lib/trpc.ts`:
+
+```ts
+import { createTRPCClient, httpBatchLink } from '@trpc/client';
+import { browser } from '$app/environment';
+import { page } from '$app/state';
+import type { AppRouter } from './server/trpc/router.js';
+
+export function createTRPC() {
+	return createTRPCClient<AppRouter>({
+		links: [
+			httpBatchLink({
+			  // We use the absolute path on the server
+				url: browser ? '/api/trpc' : `${page.url.origin}/api/trpc`
+			})
+		]
+	});
+}
+```
+
+## Using Your Type-Safe API in Components
+
+We can now make API requests inside our components using the `createTRPC()` function:
+
+```ts
+<script lang="ts">
+	import { createTRPC } from '$lib/trpc.js';
+
+	const trpc = createTRPC();
+	let greeting = $state('')
+
+	// This will run on the server first, then the client
+	trpc.hello.query({ text: 'World' }).then((data) => {
+	   greeting = data.greeting;
+	});
+</script>
+
+<h1>{greeting}</h1>
+```
+
+## Conclusion
+
+tRPC 11's Fetch API-based architecture makes it very easy to use with SvelteKit. You only need a few files to create a completely type-safe API that works smoothly throughout your whole application.
+
+This is all you need to get started with tRPC and SvelteKit. Happy hacking!

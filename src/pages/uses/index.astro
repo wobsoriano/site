@@ -1,0 +1,106 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const title = "Uses";
+const description = "My Photos";
+
+const coding = [
+  {
+    name: "Zed",
+    description: "My editor of choice",
+    link: "https://zed.sh/",
+  },
+  {
+    name: "Cursor",
+    description: "AI editor",
+    link: "https://cursor.com/",
+  },
+];
+
+const terminal = [
+  {
+    name: "Ghostty",
+    description: "Chosen for stability and performance.",
+    link: "https://ghostty.com/",
+  },
+  {
+    name: "Oh My ZSH",
+    description: "Plugin framework I use to make terminal great again.",
+    link: "https://ohmyz.sh/",
+  },
+  {
+    name: "fnm",
+    description: "Fast Node.js version manager.",
+    link: "https://github.com/Schniz/fnm",
+  },
+];
+
+const apps = [
+  {
+    name: "Raycast",
+    description: "Spotlight replacement which boosts my efficiency with Mac.",
+    link: "https://raycast.com/",
+  },
+  {
+    name: "Screen Studio",
+    description: "Beautiful screen recording in minutes.",
+    link: "https://screenstudio.com/",
+  },
+  {
+   name: "Orbstack",
+   description: "Fast and light Docker Desktop alternative.",
+   link: "https://orbstack.com/",
+  },
+];
+---
+
+<Base title={title} description={description}>
+  <section >
+    <h1 class="mb-8 text-2xl font-medium tracking-tight">Some of what I use</h1>
+    <h2 class="mb-4" >Coding</h2>
+    <ul>
+      {
+        coding.map((app) => (
+          <li>
+            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
+              {app.name}
+            </a>{" "}
+            - {app.description}
+          </li>
+        ))
+      }
+    </ul>
+    <h2 class="my-4">Terminal</h2>
+    <ul>
+      {
+        terminal.map((app) => (
+          <li>
+            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
+              {app.name}
+            </a>{" "}
+            - {app.description}
+          </li>
+        ))
+      }
+    </ul>
+    <h2 class="my-4">Apps</h2>
+    <ul>
+      {
+        apps.map((app) => (
+          <li>
+            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
+              {app.name}
+            </a>{" "}
+            - {app.description}
+          </li>
+        ))
+      }
+    </ul>
+    <h2 class="my-4">Hardware</h2>
+    <ul>
+      <li>MacBook Pro M1 Pro 16GB</li>
+      <li>Keyboard: <a href="https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard" target="_blank" class="hover:opacity-80 transition-opacity duration-200">Keychron Q10 (Alice)</a></li>
+      <li>Mouse: <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006556.html" target="_blank" class="hover:opacity-80 transition-opacity duration-200">Logitech MX MASTER 3S</a></li>
+    </ul>
+  </section>
+</Base>
