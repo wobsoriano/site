@@ -49,7 +49,7 @@ export default defineConfig({
       include: {
         "fa6-solid": ["rss", "circle-half-stroke"],
         tabler: ["mail-filled"],
-        "fa6-brands": ["x-twitter", "github", "instagram", "linkedin-in", "bluesky"],
+        "fa6-brands": ["x-twitter", "github", "linkedin-in", "bluesky"],
       },
     }),
     sitemap(),
