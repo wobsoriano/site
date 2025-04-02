@@ -8,7 +8,7 @@ const coding = [
   {
     name: "Zed",
     description: "My editor of choice",
-    link: "https://zed.sh/",
+    link: "https://zed.dev/",
   },
   {
     name: "Cursor",
@@ -55,52 +55,71 @@ const apps = [
 ---
 
 <Base title={title} description={description}>
-  <section >
+  <section>
     <h1 class="mb-8 text-2xl font-medium tracking-tight">Some of what I use</h1>
-    <h2 class="mb-4" >Coding</h2>
-    <ul>
-      {
-        coding.map((app) => (
-          <li>
-            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
-              {app.name}
-            </a>{" "}
-            - {app.description}
-          </li>
-        ))
-      }
-    </ul>
-    <h2 class="my-4">Terminal</h2>
-    <ul>
-      {
-        terminal.map((app) => (
-          <li>
-            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
-              {app.name}
-            </a>{" "}
-            - {app.description}
-          </li>
-        ))
-      }
-    </ul>
-    <h2 class="my-4">Apps</h2>
-    <ul>
-      {
-        apps.map((app) => (
-          <li>
-            <a href={app.link} target="_blank" class="hover:opacity-80 transition-opacity duration-200">
-              {app.name}
-            </a>{" "}
-            - {app.description}
-          </li>
-        ))
-      }
-    </ul>
-    <h2 class="my-4">Hardware</h2>
-    <ul>
-      <li>MacBook Pro M1 Pro 16GB</li>
-      <li>Keyboard: <a href="https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard" target="_blank" class="hover:opacity-80 transition-opacity duration-200">Keychron Q10 (Alice)</a></li>
-      <li>Mouse: <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006556.html" target="_blank" class="hover:opacity-80 transition-opacity duration-200">Logitech MX MASTER 3S</a></li>
-    </ul>
+    <div class="prose prose-neutral dark:prose-invert">
+      <h2 class="mb-4 text-lg tracking-tight">Coding</h2>
+      <ul class="space-y-2">
+        {
+          coding.map((app) => (
+            <li class="flex items-baseline">
+              <a href={app.link} target="_blank" class="text-[#333333] dark:text-[#D4D4D4] hover:opacity-80 transition-opacity duration-200">
+                {app.name}
+              </a>
+              <span class="mx-2 text-neutral-600 dark:text-neutral-400">-</span>
+              <span class="text-neutral-600 dark:text-neutral-400">{app.description}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="my-4 text-lg tracking-tight">Terminal</h2>
+      <ul class="space-y-2">
+        {
+          terminal.map((app) => (
+            <li class="flex items-baseline">
+              <a href={app.link} target="_blank" class="text-[#333333] dark:text-[#D4D4D4] hover:opacity-80 transition-opacity duration-200">
+                {app.name}
+              </a>
+              <span class="mx-2 text-neutral-600 dark:text-neutral-400">-</span>
+              <span class="text-neutral-600 dark:text-neutral-400">{app.description}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="my-4 text-lg tracking-tight">Apps</h2>
+      <ul class="space-y-2">
+        {
+          apps.map((app) => (
+            <li class="flex items-baseline">
+              <a href={app.link} target="_blank" class="text-[#333333] dark:text-[#D4D4D4] hover:opacity-80 transition-opacity duration-200">
+                {app.name}
+              </a>
+              <span class="mx-2 text-neutral-600 dark:text-neutral-400">-</span>
+              <span class="text-neutral-600 dark:text-neutral-400">{app.description}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <h2 class="my-4 text-lg tracking-tight">Hardware</h2>
+      <ul class="space-y-2">
+        <li class="flex items-baseline">
+          <span class="text-[#333333] dark:text-[#D4D4D4]">MacBook Pro M1 Pro 16GB</span>
+        </li>
+        <li class="flex items-baseline">
+          <span class="text-neutral-600 dark:text-neutral-400">Keyboard:</span>
+          <span class="mx-2 text-neutral-600 dark:text-neutral-400">-</span>
+          <a href="https://www.keychron.com/products/keychron-q10-alice-layout-qmk-custom-mechanical-keyboard" target="_blank" class="text-[#333333] dark:text-[#D4D4D4] hover:opacity-80 transition-opacity duration-200">
+            Keychron Q10 (Alice)
+          </a>
+        </li>
+        <li class="flex items-baseline">
+          <span class="text-neutral-600 dark:text-neutral-400">Mouse:</span>
+          <span class="mx-2 text-neutral-600 dark:text-neutral-400">-</span>
+          <a href="https://www.logitech.com/en-us/products/mice/mx-master-3s.910-006556.html" target="_blank" class="text-[#333333] dark:text-[#D4D4D4] hover:opacity-80 transition-opacity duration-200">
+            Logitech MX MASTER 3S
+          </a>
+        </li>
+      </ul>
+    </div>
   </section>
 </Base>
