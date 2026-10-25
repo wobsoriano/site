@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { socialLinks } from "../config";
+import { getProjects } from "../lib/stars";
+
+const projects = await getProjects();
+---
+
+<Base title="Projects" description="Open source projects by Robert Soriano, from Clerk's SDKs to svelte-sonner and trpc-nuxt.">
+  <h1 class="mb-3 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">Some things I've built</h1>
+  <p class="mb-10 text-muted">
+    The ones people use most, by stars. There are 200+ more on
+    <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" class="link">GitHub</a>.
+  </p>
+  <ProjectList projects={projects} />
+</Base>

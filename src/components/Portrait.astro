@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+import { socialLinks } from "../config";
+import me from "../assets/me-crop.jpeg";
+---
+
+<a
+  href={socialLinks.twitter}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Robert on X"
+  class="portrait group relative mx-auto mb-10 block size-40 shrink-0 overflow-hidden rounded-full bg-line ring-1 ring-line sm:float-right sm:mb-6 sm:ml-8 sm:mt-1"
+  data-portrait>
+  <Image
+    src={me}
+    alt=""
+    width={320}
+    height={320}
+    loading="eager"
+    class="size-full object-cover grayscale transition duration-300 group-hover:grayscale-0"
+  />
+  <canvas class="absolute inset-0 size-full opacity-0 transition-opacity duration-500" aria-hidden="true"></canvas>
+</a>
+
+<style>
+  /* Once the shader draws, its dithered copy replaces the photo. */
+  .portrait.is-live canvas {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  import type { ShaderInstance } from "shaders/js";
+
+  let shader: ShaderInstance | undefined;
+
+  // Dark pixels take the darker of page and ink, light pixels the lighter, so the portrait reads as a photo in both themes.
+  const tones = () => {
+    const style = getComputedStyle(document.documentElement);
+    const hex = (name: string) =>
+      "#" +
+      style
+        .getPropertyValue(name)
+        .trim()
+        .split(/\s+/)
+        .map((n) => Number(n).toString(16).padStart(2, "0"))
+        .join("");
+    const dark = document.documentElement.dataset.theme === "dark";
+    return dark ? { colorA: hex("--bg"), colorB: hex("--ink") } : { colorA: hex("--ink"), colorB: hex("--bg") };
+  };
+
+  async function mount() {
+    const portrait = document.querySelector<HTMLElement>("[data-portrait]");
+    const canvas = portrait?.querySelector("canvas");
+    const img = portrait?.querySelector("img");
+    if (!portrait || !canvas || !img) return;
+
+    // The library is ~700KB gzipped, so only fetch it where it can run and the visitor isn't saving data.
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection?.saveData;
+    if (!("gpu" in navigator) || saveData) return;
+
+    const { createShader, isWebGPUSupported } = await import("shaders/js");
+    if (!isWebGPUSupported() || !portrait.isConnected) return;
+
+    const photo = { type: "ImageTexture", id: "photo", props: { url: img.currentSrc || img.src, objectFit: "cover" } };
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    shader = await createShader(
+      canvas,
+      {
+        components: [
+          {
+            type: "Dither",
+            id: "dither",
+            props: { pattern: "bayer4", pixelSize: 2, spread: 0.8, ...tones() },
+            children: still
+              ? [photo]
+              : [{ type: "CursorRipples", id: "ripples", props: { intensity: 8, decay: 6, radius: 0.4, chromaticSplit: 0 }, children: [photo] }],
+          },
+        ],
+      },
+      {
+        disableTelemetry: true,
+        onReady: () => portrait.classList.add("is-live"),
+        onError: () => portrait.classList.remove("is-live"),
+      },
+    );
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    const start = () => mount().catch(() => {});
+    if ("requestIdleCallback" in window) requestIdleCallback(start, { timeout: 2000 });
+    else setTimeout(start, 500);
+  });
+
+  document.addEventListener("astro:before-swap", () => {
+    shader?.destroy();
+    shader = undefined;
+  });
+
+  document.addEventListener("theme-change", () => {
+    shader?.update("dither", tones());
+  });
+</script>

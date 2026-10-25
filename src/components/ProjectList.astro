@@ -1,0 +1,38 @@
+---
+interface Props {
+  projects: { name: string; url: string; year: number; stars: number; description: string }[];
+}
+
+const { projects } = Astro.props;
+
+const compact = new Intl.NumberFormat("en", { notation: "compact", maximumFractionDigits: 1 });
+---
+
+<ul class="-mx-3 space-y-1">
+  {
+    projects.map((project) => (
+      <li>
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block rounded-lg px-3 py-3 transition-colors hover:bg-line/50">
+          <span class="flex items-baseline justify-between gap-4">
+            <span class="font-medium tracking-tight text-ink">{project.name}</span>
+            <span class="flex shrink-0 items-baseline gap-3 text-sm tabular-nums text-muted">
+              <span class="flex items-center gap-1" title={`${project.stars.toLocaleString("en")} stars on GitHub`}>
+                <svg viewBox="0 0 16 16" class="size-3.5 self-center" fill="currentColor" aria-hidden="true">
+                  <path d="M8 .75a.75.75 0 0 1 .67.42l1.88 3.8 4.2.61a.75.75 0 0 1 .41 1.28l-3.04 2.96.72 4.18a.75.75 0 0 1-1.09.79L8 12.82l-3.75 1.97a.75.75 0 0 1-1.09-.79l.72-4.18L.84 6.86a.75.75 0 0 1 .41-1.28l4.2-.61L7.33 1.17A.75.75 0 0 1 8 .75" />
+                </svg>
+                <span class="sr-only">Stars:</span>
+                {compact.format(project.stars).toLowerCase()}
+              </span>
+              <span>{project.year}</span>
+            </span>
+          </span>
+          <span class="mt-1 block text-muted">{project.description}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>
