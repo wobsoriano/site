@@ -2,28 +2,20 @@
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
 }
 
 import { metaData } from "../config";
 import { SEO } from "astro-seo";
 
-import { getImagePath } from "astro-opengraph-images";
+const { title, description = metaData.description } = Astro.props;
 
-const { title, description = metaData.description, image } = Astro.props;
-
-const { url, site } = Astro;
-const openGraphImageUrl = getImagePath({ url, site });
-
-// If the image is not provided, use the default image
-const openGraphImage = image
-  ? new URL(image, url.href).href
-  : openGraphImageUrl;
+const { url } = Astro;
+const openGraphImage = new URL(metaData.ogImage, Astro.site).href;
 ---
 
 <SEO
   title={title}
-  titleTemplate=`%s | ${metaData.title}`
+  titleTemplate={`%s | ${metaData.title}`}
   titleDefault={metaData.title}
   description={description}
   charset="UTF-8"
@@ -31,12 +23,12 @@ const openGraphImage = image
     basic: {
       title: title || metaData.title,
       type: "website",
-      image: openGraphImageUrl,
+      image: openGraphImage,
       url: url,
     },
     optional: {
       description,
-      siteName: "AstroFolio",
+      siteName: metaData.title,
       locale: "en_US",
     },
   }}
@@ -45,10 +37,13 @@ const openGraphImage = image
     title: title || metaData.title,
     description,
     image: openGraphImage,
-    creator: "@jonasmerlins1",
+    creator: "@wobsoriano",
   }}
   extend={{
-    // extending the default link tags
-    link: [{ rel: "icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+    meta: [
+      { name: "theme-color", content: "#ffffff", media: "(prefers-color-scheme: light)" },
+      { name: "theme-color", content: "#121212", media: "(prefers-color-scheme: dark)" },
+    ],
   }}
 />
