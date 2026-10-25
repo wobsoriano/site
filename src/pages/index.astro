@@ -2,7 +2,6 @@
 import Base from "../layouts/Base.astro";
 import Portrait from "../components/Portrait.astro";
 import ProjectList from "../components/ProjectList.astro";
-import { socialLinks } from "../config";
 import { getProjects } from "../lib/stars";
 
 const projects = (await getProjects()).slice(0, 5);
@@ -12,18 +11,12 @@ const projects = (await getProjects()).slice(0, 5);
   <section class="flow-root">
     <Portrait />
     <h1 class="mb-6 text-3xl font-semibold tracking-tight text-ink sm:text-4xl">Hi, I'm Robert!</h1>
-    <div class="space-y-4 text-pretty">
-      <p>
-        I'm a software engineer at <a href="https://clerk.com" target="_blank" rel="noopener noreferrer" class="link">Clerk</a>,
-        where I work on the SDKs that add sign-in to web and mobile apps. Lately that means Expo, Vue, Nuxt and Astro.
-      </p>
-      <p>
-        Outside of work I build open source, mostly for the Vue and Svelte crowds. Some of it caught on, like
-        <a href="https://svelte-sonner.vercel.app" target="_blank" rel="noopener noreferrer" class="link">svelte-sonner</a>
-        and <a href="https://trpc-nuxt.pages.dev" target="_blank" rel="noopener noreferrer" class="link">trpc-nuxt</a>.
-        The rest lives on <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" class="link">GitHub</a>.
-      </p>
-    </div>
+    <p class="text-pretty">
+      I work as a <strong class="font-semibold text-ink">Software Engineer</strong> at
+      <a href="https://clerk.com" target="_blank" rel="noopener noreferrer" class="link">Clerk</a>, building the SDKs
+      developers and agents use to add auth to their apps. I'm always exploring frontend and backend tooling to make the developer
+      experience better.
+    </p>
   </section>
 
   <section class="mt-16" aria-labelledby="projects-heading">
