@@ -4,7 +4,7 @@ export const metaData = {
   name: "Robert Soriano",
   ogImage: "/opengraph-image.png",
   description:
-    "Software engineer at Clerk, building the SDKs that add sign-in to mobile and web apps. Author of svelte-sonner, trpc-nuxt and 200+ open source projects.",
+    "Software Engineer at Clerk, building the SDKs developers and agents use to add auth to their apps. Author of svelte-sonner and trpc-nuxt.",
 };
 
 export const email = "sorianorobertc@gmail.com";
@@ -27,7 +27,7 @@ export const projects = [
     year: 2022,
     stars: 1769,
     description:
-      "Clerk's JavaScript SDKs. I've merged 450+ pull requests here, lately for @clerk/expo and the Vue, Nuxt and Astro SDKs.",
+      "Clerk's JavaScript SDKs. Lately I work on @clerk/expo and the Vue, Nuxt and Astro SDKs.",
   },
   {
     name: "svelte-sonner",

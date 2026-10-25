@@ -1,6 +1,6 @@
 # site
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/wobsoriano/site)
+My personal site, [robsoriano.com](https://robsoriano.com).
 
 ## Stack
 
@@ -17,9 +17,13 @@ bun install
 bun dev
 ```
 
+## GitHub stars
+
+Star counts on the projects list are fetched from the GitHub API at build time. Set a `GITHUB_TOKEN` environment variable (a token with no scopes is enough) so builds aren't rate-limited. Without it, the counts fall back to the numbers in `src/config.js`.
+
 ## Credits
 
-This site is built using [Astrofilio](https://github.com/vikas5914/Astrofolio) template by [Vikas](https://kapadiya.net/), which is a port of the [Nextfolio](https://github.com/1msirius/Nextfolio) template by [Sirius](https://www.imsirius.xyz/).
+Originally started from the [Astrofolio](https://github.com/vikas5914/Astrofolio) template by [Vikas](https://kapadiya.net/), a port of [Nextfolio](https://github.com/1msirius/Nextfolio) by [Sirius](https://www.imsirius.xyz/).
 
 ## License
 
