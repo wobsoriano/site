@@ -1,23 +1,14 @@
-<div
-  class="portrait relative mx-auto mb-10 block size-40 shrink-0 overflow-hidden rounded-full bg-line ring-1 ring-line sm:float-right sm:mb-6 sm:ml-8 sm:mt-1">
-  <!-- The dither is drawn at build time in each theme's tones (src/pages/portrait-[theme].png.ts). -->
-  <img src="/portrait-light.png" alt="Robert Soriano" width="160" height="160" class="dither dither-light" />
-  <img src="/portrait-dark.png" alt="Robert Soriano" width="160" height="160" class="dither dither-dark" />
-</div>
+---
+import { Image } from "astro:assets";
+import me from "../assets/me.jpeg";
+---
 
-<style>
-  .dither {
-    width: 100%;
-    height: 100%;
-    image-rendering: pixelated;
-  }
-
-  .dither-dark,
-  :global([data-theme="dark"]) .dither-light {
-    display: none;
-  }
-
-  :global([data-theme="dark"]) .dither-dark {
-    display: block;
-  }
-</style>
+<Image
+  src={me}
+  alt="Robert Soriano"
+  width={160}
+  height={160}
+  densities={[1, 2]}
+  loading="eager"
+  class="mx-auto mb-10 block size-40 rounded-full bg-line object-cover grayscale transition duration-300 hover:grayscale-0 sm:float-right sm:mb-6 sm:ml-8 sm:mt-1"
+/>
